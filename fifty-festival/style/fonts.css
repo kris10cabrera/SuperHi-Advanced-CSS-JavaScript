@@ -1,0 +1,16 @@
+@font-face {
+    font-family: 'LunchType-Regular';
+    src: url('../assets/lunchtype22-regular-webfont.woff2') format('woff2'), url('lunchtype22-regular-webfont.woff') format('woff'), url('lunchtype22-regular-webfont.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'LunchType-Medium';
+    src: url('../assets/lunchtype24-medium-expanded-webfont.woff2') format('woff2'), url('lunchtype24-medium-expanded-webfont.woff') format('woff'), url('lunchtype24-medium-expanded-webfont.ttf') format('truetype');
+}
+
+.marquee,
+.date,
+.lunch-medium,
+.lineup h2 {
+    font-family: 'LunchType-Medium', sans-serif;
+}

@@ -1,0 +1,182 @@
+body {
+    font-family: 'LunchType-Regular', sans-serif;
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+.section {
+    min-height: 100vh;
+    /*   makes each section take up 100% of the viewport height of the page */
+    display: flex;
+    /* this enables flexbox */
+}
+
+
+/* helper class that adds padding to our sections that can be reused */
+
+.section-pad {
+    padding-left: 5vh;
+    padding-right: 5vw;
+}
+
+.container {
+    max-width: 810px;
+    margin: auto;
+    /*   this centers the box */
+}
+
+.intro {
+    background-image: url(../assets/intro.jpg);
+    color: #ffeed1;
+}
+
+.intro p {
+    font-size: 36px;
+    line-height: 1.2;
+}
+
+.logo {
+    display: block;
+    text-align: center;
+    margin-bottom: 32px;
+    max-width: 112px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.logo img {
+    width: 100%;
+}
+
+
+/* another helper class */
+
+.bg-cover {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    50% {
+        transform: translateY(0px);
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.appear {
+    opacity: 0;
+    animation-name: fadeIn;
+    animation-duration: 3s;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+}
+
+.marquee {
+    position: absolute;
+    top: 3vh;
+    left: 0;
+    width: 100%;
+    /*   each letter will be 5% of the viewport width */
+    font-size: 5vw;
+    line-height: 1;
+    overflow: hidden;
+}
+
+.marquee span {
+    /*   to ensure the text stays all on the same line */
+    white-space: nowrap;
+    display: block;
+    position: relative;
+    animation: moveLeft 200s infinite linear;
+}
+
+.difference {
+    mix-blend-mode: difference;
+}
+
+@keyframes moveLeft {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-3000vw);
+    }
+}
+
+.day {
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    /*   so the squiggles don't overflow in the box */
+}
+
+.day .container {
+    position: relative;
+    z-index: 2;
+}
+
+.day-1 {
+    background-color: #FF74A7;
+}
+
+.day-2 {
+    background-color: #00B290;
+}
+
+.day-3 {
+    background-image: url(../assets/day-3.jpg);
+}
+
+.lineup {
+    text-align: center;
+}
+
+.date {
+    font-size: 28px;
+    color: #FFEED1;
+    margin-bottom: 48px;
+    line-height: 1;
+    text-align: center;
+}
+
+.lineup h2 {
+    font-size: 56px;
+    line-height: 1;
+    margin-bottom: 6px;
+}
+
+.lineup p {
+    21px
+}
+
+.lineup li {
+    margin-bottom: 24px;
+}
+
+@media(max-width:640px) {
+    .marquee {
+        /*     here we reset our marquee back to its default position */
+        position: relative;
+        top: auto;
+        left: auto;
+        width: 90vw;
+        margin-bottom: 24px;
+    }
+    .logo {
+        max-width: 64px;
+        margin-bottom: 24px;
+    }
+    .intro p {
+        font-size: 20px;
+    }
+    .lineup h2 {
+        font-size: 30px;
+    }
+}
