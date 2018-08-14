@@ -1,0 +1,125 @@
+body{
+  background-color: #000000;
+  color: #ffffff;
+  font-family: 'Helvetica Neue', sans-serif;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 1.5;
+	/*   padding is linked to the screen size. body tag by default is only as tall as its content. so 	here we stretch it out :) */
+  padding: 5vh 3vw;
+  min-height: 100vh;
+/*   enabling flexbox stacks them side by side as default */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.top, .middle, .indicators{
+  text-align: center;
+  position: relative;
+}
+
+input{
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  outline: none;
+  text-align: center;
+  color: white;
+  font-size: 72px;
+}
+
+.search-input::placeholder{
+  color: #323232;
+}
+
+.search-clear, .spinner{
+  opacity: 0;
+  transition: opacity .5s ease-in;
+}
+
+.search-clear{
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+  
+}
+
+.title{
+  z-index: 1;
+  position: relative;
+}
+
+.videos, .middle, .grid{
+  display: grid;
+  place-items: center;
+}
+
+.search-input, .videos, .full-area{
+  grid-area: 1/1;
+}
+.video{
+/*   this tells each child video to take up the full width & height of our grid */
+  grid-area: 1/1;
+  max-width: 500px;
+  max-height: 500px;
+  display: block;
+}
+
+
+
+.search-hint, .spinner{
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+/* when we have show-hint on our body tag, styles will be added only to our search hint */
+.show-hint .search-hint,
+.loading .spinner,
+.has-results .search-clear,
+.title {
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+
+.loading .search-hint,
+.has-results .title {
+  opacity: 0;
+}
+
+
+.video{
+  width: 100%;
+
+}
+
+.videos{
+  width: 100%;
+    padding-left: 24px;
+  padding-right: 24px;
+  
+}
+
+.search-input{
+  width: 94vw;
+  line-height: 1;
+  height: 88px;
+}
+
+@media(max-width:480px){
+  .search-input{
+    font-size: 32px;
+  }
+  body{
+    font-size: 18px;
+  }
+  }
+
+
+
+
+
+
+
+
+
